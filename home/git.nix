@@ -4,7 +4,7 @@
     settings = {
       user = {
         name = "Asep5K";
-        email = "Asep5K@protonmail.me";
+        email = "Asep5K@proton.me";
         signingKey = "5ABD855D031E0957";
       };
       url = {
