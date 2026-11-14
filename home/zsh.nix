@@ -68,7 +68,7 @@
       cpr = "cp --recursive";
       y = "yazi";
       tree = "eza -T";
-      eza = "eza --icons";
+      eza = "eza --icons=always";
       ls = "eza";
       ll = "eza -l";
       la = "eza -la";

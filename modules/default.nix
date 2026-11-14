@@ -6,5 +6,6 @@
     ./system/boot/zram-as-tmp.nix
     ./tasks/filesystems.nix
     ./hardware
+    ./security/wrappers
   ];
 }

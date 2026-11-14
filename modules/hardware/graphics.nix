@@ -1,6 +1,8 @@
+{ pkgs, ... }:
 {
   hardware.graphics = {
     enable = true;
-    # package = pkgs.intel-vaapi-driver;
+    extraPackages = with pkgs; [ intel-vaapi-driver ];
   };
+  environment.sessionVariables.LIBVA_DRIVER_NAME = "i965";
 }
