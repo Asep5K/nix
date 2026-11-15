@@ -1,8 +1,14 @@
 {
+  description = "No description lol.";
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05"; # nixos-unstable";
+    nixpkgs = {
+      # url = "nixpkgs/nixos-26.05";
+      url = "nixpkgs/nixos-unstable";
+    };
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      # url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -13,6 +19,14 @@
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
+            users.iuno = import ./home;
+          };
+        }
       ];
     };
   };

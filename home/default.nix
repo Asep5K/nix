@@ -11,7 +11,8 @@
     ./zsh.nix
     ./gpg.nix
     ./tmux.nix
-    ./pkgs.nix
+    ./mpv.nix
+    ./yazi.nix
   ];
   home = {
     username = "iuno";
@@ -30,7 +31,6 @@
       kew
       playerctl
       awww # wallpaper daemon
-      mpv
       mako # notify
       hyprlock
       hypridle
@@ -41,6 +41,10 @@
       python3
       libnotify
       chafa
+      wf-recorder
+      ffmpeg
+      file
+      exiftool
     ];
   };
   programs = {
