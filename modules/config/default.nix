@@ -1,6 +1,7 @@
 {
-  imports = [
-    ./zram.nix
-    ./sysctl.nix
-  ];
+    imports = [
+        ./nix.nix
+        ./zram.nix
+        ./sysctl.nix
+    ];
 }

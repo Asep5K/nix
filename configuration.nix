@@ -1,50 +1,43 @@
 {
-  pkgs,
-  ...
+    pkgs,
+    ...
 }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./modules
-  ];
+    imports = [
+        ./hardware-configuration.nix
+        ./modules
+    ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+    boot.loader.grub = {
+        enable = true;
+        device = "/dev/sda";
+    };
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-  };
+    networking.hostName = "nixosbtw"; # Define your hostname.
 
-  networking.hostName = "nixosbtw"; # Define your hostname.
+    time.timeZone = "Asia/Jakarta";
+    programs.fish.enable = true;
+    environment.variables.SUDO_PROMPT = "Passwd!: ";
+    users.users.iuno = {
+        isNormalUser = true;
+        extraGroups = [
+            "wheel"
+            "video"
+            "render"
+            "pipewire"
+            "audio"
+        ]; # Enable ‘sudo’ for the user.
+        shell = pkgs.fish;
+    };
 
-  time.timeZone = "Asia/Jakarta";
+    programs.niri.enable = true;
+    environment.systemPackages = with pkgs; [
+        wget
+        git # lol
+        wireless-regdb
+    ];
 
-  users.users.iuno = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "video"
-      "render"
-      "pipewire"
-      "audio"
-    ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
-  };
-
-  programs = {
-    niri.enable = true;
-    neovim.enable = true;
-  };
-  environment.systemPackages = with pkgs; [
-    wget
-    git # lol
-    btop # system monitor
-  ];
-
-  system.stateVersion = "26.05"; # Did you read the comment?
+    system.stateVersion = "26.05"; # Did you read the comment?
 
 }

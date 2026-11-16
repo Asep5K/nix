@@ -1,6 +1,6 @@
 {
-  programs.zsh = {
-    enable = true;
-    enableGlobalCompInit = false;
-  };
+    programs.zsh = {
+        enable = false;
+        enableGlobalCompInit = false;
+    };
 }

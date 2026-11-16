@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  hardware.cpu.intel.microcodePackage = pkgs.microcode-intel;
+    hardware.cpu.intel.microcodePackage = pkgs.microcode-intel;
 }

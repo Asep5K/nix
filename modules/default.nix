@@ -1,11 +1,12 @@
 {
-  imports = [
-    ./config
-    ./programs
-    ./services
-    ./system/boot/zram-as-tmp.nix
-    ./tasks/filesystems.nix
-    ./hardware
-    ./security/wrappers
-  ];
+    imports = [
+        ./config
+        ./programs
+        ./services
+        ./system
+        ./tasks/filesystems.nix
+        ./hardware
+        ./security/wrappers
+        ./misc/nixpkgs.nix
+    ];
 }

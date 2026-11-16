@@ -13,10 +13,18 @@
     initLua = ''
       require("git"):setup({order = 1500})
       require("full-border"):setup({set = "rounded"})
-      require("mime-ext"):setup({fallback_file1 = true})
+      require("mime-ext.local"):setup({fallback_file1 = true})
     '';
     keymap = {
       mgr.prepend_keymap = [
+        {
+          run = "cd /";
+          on = [
+            "g"
+            "r"
+          ];
+          desc = "Go to /";
+        }
         {
           run = "cd /mnt";
           on = [
@@ -31,7 +39,7 @@
             "g"
             "l"
           ];
-          desc = "cd => ~/.local";
+          desc = "Go to ~/.local";
         }
         {
           run = "plugin chmod";
@@ -39,7 +47,7 @@
             "c"
             "m"
           ];
-          desc = "Chmod on selected file/folder(s)";
+          desc = "Chmod on selected files";
         }
         {
           run = "cd /tmp";
@@ -47,7 +55,7 @@
             "c"
             "T"
           ];
-          desc = "goto /tmp";
+          desc = "Go to /tmp";
         }
       ];
     };

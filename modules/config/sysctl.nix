@@ -1,5 +1,5 @@
 {
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 20;
-  };
+    boot.kernel.sysctl = {
+        "vm.swappiness" = 20;
+    };
 }
