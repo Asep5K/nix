@@ -19,6 +19,13 @@
                 };
             };
         };
+        python = {
+            lsp.servers = [ "ruff" ];
+            format.type = [
+                "ruff"
+                "ruff-fix"
+            ];
+        };
     };
 
     vim.formatter.conform-nvim = {
@@ -26,6 +33,9 @@
         presets = {
             nixfmt.enable = true;
             shfmt.enable = true;
+            ruff.enable = true;
+            ruff-fix.enable = true;
+            ruff-organize-imports.enable = true;
         };
         setupOpts = {
             default_format_opts = {
@@ -47,5 +57,8 @@
         formatOnSave = true;
         lspconfig.enable = true;
         trouble.enable = true;
+        presets = {
+            ruff.enable = true;
+        };
     };
 }

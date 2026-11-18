@@ -6,7 +6,7 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ./modules
+        ./nixosModules
     ];
 
     boot.loader.grub = {
@@ -17,8 +17,7 @@
     networking.hostName = "nixosbtw"; # Define your hostname.
 
     time.timeZone = "Asia/Jakarta";
-    programs.fish.enable = true;
-    environment.variables.SUDO_PROMPT = "Passwd!: ";
+
     users.users.iuno = {
         isNormalUser = true;
         extraGroups = [
@@ -31,11 +30,16 @@
         shell = pkgs.fish;
     };
 
-    programs.niri.enable = true;
+    programs = {
+        fish.enable = true;
+        niri = {
+            enable = true;
+            useNautilus = false;
+        };
+    };
     environment.systemPackages = with pkgs; [
         wget
         git # lol
-        wireless-regdb
     ];
 
     system.stateVersion = "26.05"; # Did you read the comment?

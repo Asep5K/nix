@@ -2,21 +2,25 @@
 
 {
     imports = [
+        #  ./niri
+        ./nvf
         ./shell
-        ./foot.nix
-        ./git.nix
         ./fastfetch.nix
+        ./foot.nix
+        ./fzf.nix
+        ./git.nix
+        ./gpg.nix
         ./hypridle.nix
         ./hyprlock.nix
-        ./starship.nix
-        ./gpg.nix
-        ./tmux.nix
         ./mpv.nix
+        ./starship.nix
+        ./tmux.nix
         ./yazi.nix
-        ./fzf.nix
-        ./nvf
     ];
     home = {
+        sessionVariables = {
+            SUDO_PROMPT = "Passwd!: ";
+        };
         username = "iuno";
         homeDirectory = "/home/iuno";
         stateVersion = "26.05";
@@ -49,7 +53,16 @@
             file
             exiftool
             bitwarden-desktop
+            uv
+            flatpak
+            cava
         ];
+    };
+    xdg = {
+        enable = true;
+        localBinInPath = true;
+        mimeApps.enable = true;
+        userDirs.enable = true;
     };
     programs = {
         zoxide.enable = true;

@@ -26,7 +26,7 @@
                 opts = {
                     tabstop = 8;
                     shiftwidth = 8;
-                    expandtab = false;
+                    expandtab = true;
                     list = true;
                     cursorline = true;
                     cursorlineopt = "screenline";

@@ -1,12 +1,12 @@
 # TODO: todo todo ....
 {
     vim.keymaps = [
-        {
-            key = ";";
-            mode = [ "n" ];
-            action = ":";
-            desc = "CMD enter command mode";
-        }
+        # {
+        #     key = ";";
+        #     mode = [ "n" ];
+        #     action = ":";
+        #     desc = "CMD enter command mode";
+        # }
         {
             key = "jk";
             mode = [ "i" ];
