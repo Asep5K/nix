@@ -1,13 +1,15 @@
 {
     vim.languages = {
+        enableTreesitter = true;
         nix = {
             enable = true;
             lsp.enable = true;
             format.enable = true;
             treesitter.enable = true;
         };
-        css = {
+        bash = {
             enable = true;
+            format.enable = true;
             lsp.enable = true;
         };
         markdown = {
@@ -21,6 +23,7 @@
         };
         python = {
             lsp.servers = [ "ruff" ];
+            lsp.enable = true;
             format.type = [
                 "ruff"
                 "ruff-fix"
@@ -54,11 +57,15 @@
 
     # lsp
     vim.lsp = {
+        enable = true;
         formatOnSave = true;
         lspconfig.enable = true;
         trouble.enable = true;
+        inlayHints.enable = true;
+        lightbulb.enable = true;
         presets = {
             ruff.enable = true;
+            bash-language-server.enable = true;
         };
     };
 }

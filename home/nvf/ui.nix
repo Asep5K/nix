@@ -11,10 +11,12 @@
         utility.yazi-nvim.enable = true;
         git.gitsigns.enable = true;
         utility.vim-wakatime.enable = true;
+        ui.colorizer.enable = true;
     };
     vim.visuals = {
         indent-blankline.enable = true;
         nvim-web-devicons.enable = true;
+        highlight-undo.enable = true;
     };
 
     vim.tabline.nvimBufferline = {

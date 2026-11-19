@@ -1,9 +1,11 @@
 {
     programs.foot = {
         enable = true;
+        server.enable = true;
         settings = {
             main = {
-                font = "Maple Mono NF:size=18";
+                #font = "Maple Mono NF:size=18";
+                font = "JetBrainsMono Nerd Font Mono:size=17";
                 dpi-aware = "yes";
             };
             mouse = {
@@ -19,7 +21,7 @@
                 quit = "none";
                 pipe-scrollback = "[wl-copy] Control+Shift+a";
                 pipe-command-output = "[wl-copy] Control+Shift+g";
-                color-theme-toggle = "Control+shift+t";
+                color-theme-toggle = "Control+Shift+t";
             };
             url = {
                 launch = "xdg-open \${url}";

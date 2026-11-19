@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
     programs.nvf = {
         enable = true;
@@ -12,6 +13,11 @@
             vim = {
                 viAlias = true;
                 vimAlias = true;
+                extraPackages = [
+                    pkgs.tree-sitter
+                    pkgs.wl-clipboard
+                ];
+                undoFile.enable = true;
                 clipboard = {
                     enable = true;
                     providers.wl-copy.enable = true;

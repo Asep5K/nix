@@ -1,12 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
     programs.yazi = {
         enable = true;
+        package = pkgs-unstable.yazi;
         extraPackages = with pkgs; [
             exiftool
             file
         ];
-        plugins = with pkgs.yaziPlugins; {
+        plugins = with pkgs-unstable.yaziPlugins; {
             inherit
                 git
                 full-border

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
     imports = [
@@ -11,9 +11,11 @@
         ./fzf.nix
         ./git.nix
         ./gpg.nix
+        ./mako.nix
         ./mpv.nix
         ./starship.nix
         ./tmux.nix
+        ./xdg.nix
         ./yazi.nix
     ];
     home = {
@@ -31,18 +33,14 @@
             cliphist # clipboard itu lah intinya
             wl-clipboard # clipboard juga
             jq # jq buat anuin json (who is json?)
-            rofi # launcher drun
             eww # bar (foo bar)
             eza # ls tapi lebih modern
-            kew # Music player
+            pkgs-unstable.kew # Music player
             playerctl # buat controll music
             awww # wallpaper daemon
-            mako # notify
-            hyprlock # buat lock laptop
-            hypridle # idle daemon
             yt-dlp # buat download bokep
+            telegram-desktop # instant mess
             vesktop # alternarif discord
-            librewolf # browser buat nonton bokep
             brightnessctl # buat atur brightness
             python3 # buat apa aja
             libnotify # buat ngirim notify
@@ -54,21 +52,32 @@
             bitwarden-desktop # manajeman password akun bokep
             flatpak # iykyk
             cava # iykyk
+            swayimg # buat liat foto
+
+            xwayland-satellite # dependensi niri
 
             # font
-            jetbrains-mono # JetBrainsMono
+            nerd-fonts.jetbrains-mono # JetBrainsMono
             maple-mono.NF # Maple Mono
+            noto-fonts-color-emoji
         ];
     };
-    xdg = {
-        enable = true;
-        localBinInPath = true;
-        mimeApps.enable = true;
-        userDirs.enable = true;
-    };
     programs = {
+        wofi.enable = true; # alternatif rofi wayland
         zoxide.enable = true; # z
-        yambar.enable = true;
+
+        librewolf = {
+            # browser buat nonton bokep
+            enable = true;
+            settings = {
+                "privacy.sanitize.sanitizeOnShutdown" = false;
+                "browser.tabs.min_inactive_duration_before_unload" = 300000;
+                "browser.toolbars.bookmarks.visibility" = "never";
+                "browser.tabs.hoverPreview.showThumbnails" = false;
+                "sidebar.verticalTabs" = true;
+            };
+        };
+
         bat = {
             # cat tapi lebih keren
             enable = true;
