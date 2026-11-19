@@ -6,7 +6,7 @@
             main = {
                 #font = "Maple Mono NF:size=18";
                 font = "JetBrainsMono Nerd Font Mono:size=17";
-                dpi-aware = "yes";
+                dpi-aware = "no";
             };
             mouse = {
                 hide-when-typing = "yes";

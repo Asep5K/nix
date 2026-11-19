@@ -6,8 +6,8 @@
         ./hypr
         ./nvf
         ./shell
+        ./terminal
         ./fastfetch.nix
-        ./foot.nix
         ./fzf.nix
         ./git.nix
         ./gpg.nix
@@ -53,6 +53,7 @@
             flatpak # iykyk
             cava # iykyk
             swayimg # buat liat foto
+            alacritty # terminal
 
             xwayland-satellite # dependensi niri
 
