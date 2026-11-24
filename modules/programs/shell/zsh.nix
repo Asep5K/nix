@@ -57,18 +57,19 @@
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
         # # preview directory's content with exa when completing cd
         zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --color=always $realpath'
+        zstyle ':fzf-tab:complete:eza:*' fzf-preview 'eza -1 --color=always $realpath'
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+        zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -1 --color=always $realpath'
         # switch group using `<` and `>`
         zstyle ':fzf-tab:*' switch-group '<' '>'
       '';
       shellAliases = {
         ydl = "yt-dlp";
         btw = "echo i use nixos btw";
-        nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixosbtw";
-        nrb = "sudo nixos-rebuild build --flake ~/nixos-dotfiles#nixosbtw";
-        nrt = "sudo nixos-rebuild test --flake ~/nixos-dotfiles#nixosbtw";
-        nrdb = "sudo nixos-rebuild dry-build --flake ~/nixos-dotfiles#nixosbtw";
-        doas = "sudo";
+        nrs = "nixos-rebuild switch --flake ~/nixos-dotfiles#nixosbtw --sudo";
+        nrb = "nixos-rebuild build --flake ~/nixos-dotfiles#nixosbtw --sudo";
+        nrt = "nixos-rebuild test --flake ~/nixos-dotfiles#nixosbtw --sudo";
+        nrdb = "nixos-rebuild dry-build --flake ~/nixos-dotfiles#nixosbtw --sudo";
         wlp = "wl-paste";
         wlc = "wl-copy";
         rm = "rm -i";
@@ -78,7 +79,6 @@
         chx = "chmod +x";
         cpr = "cp --recursive";
         tree = "eza -T";
-        eza = "eza --icons=always";
         ll = "eza -l";
         la = "eza -la";
         T = "eza -T";

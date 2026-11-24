@@ -18,9 +18,11 @@
           viAlias = true;
           vimAlias = true;
           syntaxHighlighting = true;
-          extraPackages = [
-            pkgs.tree-sitter
-            pkgs.wl-clipboard
+          extraPackages = with pkgs; [
+            tree-sitter
+            wl-clipboard
+            nixfmt
+            shfmt
           ];
           undoFile.enable = true;
           clipboard = {
@@ -35,8 +37,8 @@
             style = "mocha";
           };
           opts = {
-            tabstop = 8;
-            shiftwidth = 8;
+            tabstop = 2;
+            shiftwidth = 2;
             expandtab = true;
             list = true;
             cursorline = true;
