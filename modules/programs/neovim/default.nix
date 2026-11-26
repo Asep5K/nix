@@ -10,7 +10,7 @@
       };
     };
   };
-  flake.homeModules.nvf = {pkgs, ...}: {
+  flake.homeModules.nvf = { pkgs, ... }: {
     programs.nvf = {
       enable = true;
       settings = {
@@ -18,11 +18,12 @@
           viAlias = true;
           vimAlias = true;
           syntaxHighlighting = true;
+          treesitter.enable = true;
           extraPackages = with pkgs; [
             tree-sitter
             wl-clipboard
-            nixfmt
-            shfmt
+            ripgrep
+            fzf
           ];
           undoFile.enable = true;
           clipboard = {

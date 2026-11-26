@@ -8,11 +8,8 @@
         notes.todo-comments.enable = true;
         statusline.lualine.enable = true;
         binds.whichKey.enable = true;
-        fzf-lua.enable = true;
-        telescope.enable = true;
         utility.yazi-nvim.enable = true;
         git.gitsigns.enable = true;
-        utility.vim-wakatime.enable = true;
         ui.colorizer.enable = true;
       };
       vim.visuals = {
@@ -44,7 +41,9 @@
             renderer = {
               root_folder_label = false;
               highlight_git = true;
-              indent_markers = {enable = true;};
+              indent_markers = {
+                enable = true;
+              };
             };
           };
         };

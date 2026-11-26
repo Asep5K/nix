@@ -13,11 +13,9 @@
       vim.autopairs.nvim-autopairs.enable = true;
 
       vim = {
-        comments = {
-          comment-nvim = {
-            enable = true;
-            setupOpts.mappings.basic = true;
-          };
+        comments.comment-nvim = {
+          enable = true;
+          setupOpts.mappings.basic = true;
         };
         keymaps = [
           {
