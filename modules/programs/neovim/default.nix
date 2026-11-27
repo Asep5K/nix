@@ -13,10 +13,10 @@
   flake.homeModules.nvf = { pkgs, ... }: {
     programs.nvf = {
       enable = true;
+
       settings = {
+        mnw.aliases = [ "v" ];
         vim = {
-          viAlias = true;
-          vimAlias = true;
           syntaxHighlighting = true;
           treesitter.enable = true;
           extraPackages = with pkgs; [

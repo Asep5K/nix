@@ -19,7 +19,7 @@
       keymaps = [
         {
           mode = "n";
-          key = "<C-p>";
+          key = "<leader>fs";
           action = "<cmd>FzfLua files<CR>";
           desc = "Cari file";
         }

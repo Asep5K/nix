@@ -9,7 +9,6 @@
     {
       home = {
         sessionVariables = {
-          SUDO_PROMPT = "Passwd!: "; # Biar prompt sudo mu gak gitu gitu aja!!
           MOZ_ENABLE_WAYLAND = 1;
           QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
         };
@@ -31,14 +30,14 @@
           libnotify # buat ngirim notify
           chafa # Buat anuin gambar di terminal
           wf-recorder # Buat record layar pas nonton bokep
-          ffmpeg # buat compress video bokep
+          pkgs-unstable.ffmpeg # buat compress video bokep
           file # iykyk
           exiftool # iykyk
           bitwarden-desktop # manajeman password akun bokep
           flatpak # iykyk
-          cava # iykyk
           swayimg # buat liat foto
           rbw
+          nitch
           #rifu
           imagemagick
 
@@ -54,7 +53,6 @@
 
           # apaaja
           #  libva-utils
-          temurin-jre-bin-17
         ];
       };
       programs = {
@@ -70,17 +68,31 @@
             "sidebar.verticalTabs" = true;
           };
         };
-
-        bat = {
-          # cat tapi lebih keren
-          enable = true;
-          config = {
-            theme = "Catppuccin Mocha";
-            paging = "never";
-          };
+      };
+      fonts.fontconfig = {
+        enable = true;
+        hinting = "full";
+        defaultFonts = {
+          serif = [
+            "Noto Serif"
+            "Liberation Serif"
+            "Noto Serif CJK JP"
+          ];
+          sansSerif = [
+            "Noto Sans"
+            "Liberation Sans"
+            "Noto Sans CJK JP"
+          ];
+          monospace = [
+            "JetBrains Mono NF"
+            "Noto Sans Mono"
+            "Noto Sans Mono CJK JP"
+          ];
+          emoji = [
+            "Noto Color Emoji"
+          ];
         };
       };
-
       services = {
         awww.enable = true;
         cliphist.enable = true; # clipboward

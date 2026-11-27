@@ -9,6 +9,7 @@
       kernel.sysctl = {
         "vm.swappiness" = 20;
       };
+      extraModprobeConfig = "blacklist b43";
     };
   };
 }

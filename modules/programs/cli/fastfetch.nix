@@ -1,7 +1,7 @@
 {
   flake.homeModules.fastfetch = {
     programs.fastfetch = {
-      enable = true;
+      enable = false;
       settings = {
         logo.type = "small";
         display = {
